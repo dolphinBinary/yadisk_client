@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStandardPaths>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,7 +27,13 @@ private slots:
 
     void on_endEdit_clicked();
 
+    void on_trash_clicked();
+
+    void on_deleteElement_clicked();
+
 private:
     Ui::MainWindow *ui;
+
+    QString databaseLocation = "database.txt";
 };
 #endif // MAINWINDOW_H
