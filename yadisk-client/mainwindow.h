@@ -20,6 +20,12 @@ private slots:
 
     void on_startSearch_clicked();
 
+    void on_latest_clicked();
+
+    void on_create_clicked();
+
+    void on_endEdit_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
