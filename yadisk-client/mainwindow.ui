@@ -25,7 +25,11 @@
     </property>
     <layout class="QGridLayout" name="FoldersLayout">
      <item row="0" column="0">
-      <widget class="QListWidget" name="foldersListWidget"/>
+      <widget class="QListWidget" name="foldersListWidget">
+       <property name="selectionMode">
+        <enum>QAbstractItemView::MultiSelection</enum>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -160,6 +164,19 @@
     </property>
     <property name="text">
      <string>Завершить редактирование</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deleteElement">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>70</y>
+      <width>80</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
     </property>
    </widget>
   </widget>
