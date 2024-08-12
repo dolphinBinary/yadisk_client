@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "uploadfile.h"
+#include "profile.h"
 
 #include <QMessageBox>
 #include <QFile>
@@ -51,13 +53,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_upload_clicked()
 {
-    QMessageBox messageBox;
-    messageBox.setWindowTitle("Внимание!");
-    messageBox.setText("Тут пока котики не напрограммировали :3");
-    messageBox.setIcon(QMessageBox::Information);
-    messageBox.setStandardButtons(QMessageBox::Ok);
-    messageBox.exec();
-    // логика по открытию диалогового окна, где выбирался бы файл для загрузки
+    UploadFile* uploadForm = new UploadFile();
+    uploadForm->show();
 }
 
 void MainWindow::on_startSearch_clicked()
@@ -132,3 +129,19 @@ void MainWindow::on_deleteElement_clicked()
         ui->foldersListWidget->takeItem(row);
     }
 }
+
+
+void MainWindow::on_profile_clicked()
+{
+    Profile* profileForm = new Profile(this, "Dmitry", "dmitry@yandex.ru", "sTr0ngP4ssword");
+
+    profileForm->show();
+
+    connect(profileForm, &Profile::dataAvailable, this, &MainWindow::onDataAvailable);
+}
+
+void MainWindow::onDataAvailable(const QString &data)
+{
+    ui->userName->setText(data);
+}
+
