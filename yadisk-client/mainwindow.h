@@ -31,6 +31,10 @@ private slots:
 
     void on_deleteElement_clicked();
 
+    void on_profile_clicked();
+
+    void onDataAvailable(const QString &data);
+
 private:
     Ui::MainWindow *ui;
 

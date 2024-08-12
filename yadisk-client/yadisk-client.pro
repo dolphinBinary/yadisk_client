@@ -10,13 +10,19 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    profile.cpp \
+    uploadfile.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    profile.h \
+    uploadfile.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    profile.ui \
+    uploadfile.ui
 
 TRANSLATIONS += \
     yadisk-client_ru_RU.ts
